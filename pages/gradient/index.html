@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gradient Maker</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to right, red, blue);
+    }
+
+    #color-picker-1 {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    #color-picker-2 {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+  <input type="color" id="color-picker-1" />
+  <input type="color" id="color-picker-2" />
+
+  <script>
+    const colorPicker1 = document.getElementById('color-picker-1');
+    const colorPicker2 = document.getElementById('color-picker-2');
+    const body = document.body;
+
+    const updateGradient = () => {
+      const color1 = colorPicker1.value;
+      const color2 = colorPicker2.value;
+      body.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+    };
+
+    colorPicker1.addEventListener('input', updateGradient);
+    colorPicker2.addEventListener('input', updateGradient);
+  </script>
+</body>
+</html>
