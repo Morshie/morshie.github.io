@@ -35,4 +35,17 @@ const presetFlags = [
         name: 'Non-Binary',
         obj: new FlagObject(['#fafa23', '#ffffff', '#a22ac9', '#000000'])
     },
+    {
+        name: 'Gender-Fluid',
+        obj: new FlagObject(['#ff76a2', '#ffffff', '#c011d8', '#000000', '#2f3cbe'])
+    },
+    {
+        name: 'Demigirl',
+        obj: new FlagObject(['#7f7f7f', '#c3c3c3', '#feaec9', '#ffffff', '#feaec9', '#c3c3c3', '#7f7f7f'])
+    },
+    {
+        name: 'Demiboy',
+        obj: new FlagObject(['#7f7f7f', '#c3c3c3', '#99d9ea', '#ffffff', '##99d9ea', '#c3c3c3', '#7f7f7f'])
+    },
+    
 ];
