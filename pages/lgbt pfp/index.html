@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lgbt pfp</title>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=0.5'> <!-- should be good for most phones ? -->
+
+        <link rel='stylesheet' href='src/index.css'>
+        <link rel='shortcut icon' href='src/assets/favicon_16.png' type='image/png'>
+        <link rel='apple-touch-icon' href='src/assets/logo_128.png'>
+        <link rel='image_src' href='src/assets/logo_128.png'> 
+        <meta property='og:type' content='website'>
+
+
+ 
+
+        <!-- PfpPride scripts -->
+        <script src='src/pfppride/pfppride.js'></script>
+        <script src='src/pfppride/presetflags.js'></script>
+        <script src='src/pfppride/editor.js'></script>
+    </head>
+
+    <body>
+
+
+            </div>
+        </div>
+        <br>
+
+        <!-- Main dividers -->
+        <div class='outerBox'>
+
+            <!-- Upload div -->
+            <div id='uploadDiv' class='mainBox' style='display: none'>
+                <div class='bigLayer' style='overflow-y: hidden'>
+                    <span>
+                        drap and drop an image<br>
+                        (or click th icon)
+                    </span>
+                    <hr class='line'>
+
+                    <!-- Upload image -->
+                    <div class='centerImgFrame'>
+                        <span class='centerImgHelper'></span>
+
+                        <input type='file' id='uploadButton' style='display: none'>
+                        <label for='uploadButton'>
+                            <img src='src/assets/upload.png' id='uploadButton' class='centerImg uploadImg' draggable='false'>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export div -->
+            <div id='exportDiv' class='mainBox' style='display: none'>
+                <div class='bigLayer' style='overflow-y: hidden'>
+                    <span>
+                        right click and save the image !<br>
+                        (tap and hold if on mobile)
+                    </span>
+                    <hr class='line'>
+
+                    <div id='continueEditing' class='button otherFlagButton'>
+                        <span>Continue</span>
+                        <br><span>Editing</span>
+                    </div>
+
+                    <!-- Upload image -->
+                    <div class='centerImgFrame'>
+                        <span class='centerImgHelper'></span>
+                        <img id='exportEl' class='exportImg'>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editor div -->
+            <div id='editorDiv' class='mainBox' style='display: none'>
+                <table class='editorTable'>
+                    <tr>
+                        <!-- Left side -->
+                        <td class='leftSide'>
+                        <div class='sideWrap'>
+
+                            <!-- Preview -->
+                            <div class='mediumLayer'>
+                                <span>
+                                    this is your profile picture<br>
+                                </span>
+                                <hr class='line'>
+
+                                <canvas id='mainCanvas' class='pfpPreview' width='500' height='500'></canvas>
+                            </div>
+                            <br>
+
+                            <!-- Flag Select -->
+                            <div class='smallLayer'>
+                                <span>change the pride flag</span>
+                                <hr class='line'>
+
+                                <!-- fuck tables >:( -->
+                                <div id='flagButtonDiv' class='flagButtonDiv'>
+                                    <!-- Custom flag image input -->
+                                    <input type='file' id='otherFlagInput' style='display: none'>
+                                </div>
+                            </div>
+
+                        </div>
+                        </td>
+
+                        <!-- Right side -->
+                        <td class='rightSide'>
+                        <div class='sideWrap'>
+                            
+                            <!-- Settings -->
+                            <div class='bigLayer'>
+                                <div class='exportDivWrapper'>
+                                    <span>Settings</span>
+                                    <hr class='line'>
+
+                                    <div>
+                                        <!-- Image scale -->
+                                        <span>image zoom</span>
+                                        <br>
+                                        <input type='range' id='imgScaleInput' class='slider' min='0' max='3' step='0.025'>
+                                        <br>
+
+                                        <!-- Ring scale -->
+                                        <span>ring scale</span>
+                                        <br>
+                                        <input type='range' id='ringScaleInput' class='slider' min='0' max='1' step='0.025'>
+                                        <br>
+                                    </div>
+                                    <br>
+
+                                    <div class='flagButtonDiv'>
+                                        <!-- Reset image scale -->
+                                        <div id='resetImageScaleButton' class='button otherFlagButton'>
+                                            <span>Default Image</span>
+                                            <br><span>Zoom</span>
+                                        </div>
+
+                                        <!-- Reset ring scale -->
+                                        <div id='resetRingScaleButton' class='button otherFlagButton'>
+                                            <span>Default</span>
+                                            <br><span>Ring Scale</span>
+                                        </div>
+
+                                        <!-- Reset image offset -->
+                                        <div id='resetDragOffButton' class='button otherFlagButton'>
+                                            <span>Center Image</span>
+                                            <br><span>Position</span> <!-- i use code names ok ~w~ -->
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+
+                                    <div class='flagButtonDiv'>
+                                        <!-- Flag mode text -->
+                                        <span id='flagModeText'>flag mode: ring</span>
+
+                                        <div class='verticalCenter'>
+                                            <!-- Flag mode toggle -->
+                                            <div id='flagModeToggle' class='toggle'>
+                                                <div id='flagModeToggleHandle' class='toggleHandle'></div>
+                                            </div>
+                                            <!-- Flag mode preview canvas -->
+                                            <div style='padding: 8px'>
+                                                <canvas id='flagModePreview' class='pfpModePreview' width=32 height=32></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Export settings and stuff -->
+                                    <div class='exportDiv'>
+                                        <div>
+                                            <button id='chooseNewButton' class='button newImgButton'>Choose New Image</button>
+                                            <div style='height: 12px'></div>
+                                            <button id='exportButton' class='button greenButton'>Export and Open Image</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        <br>
+
+
+        <!-- Index script ( INDEX.JS !!!??) -->
+        <script src='src/index.js'></script>
+
+    </body>
+</html>
