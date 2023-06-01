@@ -18,7 +18,9 @@ const editorDiv = document.getElementById('editorDiv');
     const flagButtonDiv = document.getElementById('flagButtonDiv');
     const otherFlagInput = document.getElementById('otherFlagInput');
 
-
+    // Setting buttons
+    const imgScaleInput = document.getElementById('imgScaleInput');
+    const ringScaleInput = document.getElementById('ringScaleInput');
 
     // Reset buttons
     const resetImageScaleButton = document.getElementById('resetImageScaleButton');
@@ -146,7 +148,11 @@ otherFlagInput.onchange = function() {
     flagButtonDiv.appendChild(wrapper);
 })();
 
-
+// more settings
+imgScaleInput.oninput = function() {
+    editor.setPfpImageScale(this.value);
+    requestRefresh();
+};
 
 ringScaleInput.oninput = function() {
     editor.pfpRingScale = 1 - this.value;
